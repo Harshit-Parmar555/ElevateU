@@ -1,68 +1,77 @@
 import React from "react";
-import Navbar from "@/customcomponents/Navbar";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import Logo from "../assets/logo.png"
 import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
   const navigate = useNavigate();
   return (
-    <div className="h-[100vh] w-[100vw] bg-slate-950 ">
-      <Navbar />
-      <div className="h-[85%] w-[100%] flex">
-        <div className="h-[100%] w-[60%]  flex flex-col items-center text-white ">
-          <h1 className="text-[60px] font-bold mt-[15%]">
-            Welcome Back To ElevateU
-          </h1>
-          <p className="text-[17px] w-[80%] text-center mt-[2%]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla
-            impedit voluptatem quaerat quasi, quo accusantium vero rerum eveniet
-            ullam aperiam ipsum odio consequuntur mollitia similique saepe
-            accusamus. Rem, veritatis.
+    <div className="flex h-screen items-center justify-center bg-gradient-to-r from-c1 to-c2">
+      <div className="bg-white shadow-md rounded-lg flex max-w-4xl w-full overflow-hidden">
+        <div className="bg-slate-950 text-white p-12 w-1/2 flex flex-col items-center justify-center">
+          <img className="w-[40%] m-[20px]" src={Logo} alt="" />
+          <h1 className="text-4xl font-bold mb-4">Welcome back to</h1>
+          <h2 className="text-5xl font-bold tracking-wider mb-6">ElevateU</h2>
+          <p className="text-lg">
+            Your Learning companion for all competitive exams.
           </p>
         </div>
-        <div className="h-[100%] w-[40%]  flex items-center justify-center">
-          <Card className="w-[60%]">
-            <CardHeader>
-              <CardTitle className="text-[25px]">Login Form</CardTitle>
-              <CardDescription>
-                Start Your ElevateU Journey Now !
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form>
-                <div className="grid w-full items-center gap-4">
-                  <div className="flex flex-col space-y-1.5">
-                    <Label htmlFor="name">Email</Label>
-                    <Input
-                      required
-                      type="email"
-                      placeholder="Enter Your Valid Email"
-                    />
 
-                    <Label htmlFor="name">Passoword</Label>
-                    <Input required placeholder="Set Your Password" />
-                  </div>
-                  <Button type="submit">Submit</Button>
+        <div className="p-12 w-1/2 flex flex-col justify-center">
+          <h2 className="text-2xl font-bold text-slate-950 mb-6">
+            Login to ElevateU
+          </h2>
 
-                  <h3
-                    onClick={() => navigate("/register")}
-                    className="m-auto cursor-pointer"
-                  >
-                    Not an Existing User ?
-                  </h3>
-                </div>
-              </form>
-            </CardContent>
-          </Card>
+          <div className="flex space-x-4 mb-6">
+            <button className="bg-gray-100 flex items-center justify-center px-4 py-2 rounded-md w-1/2">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png"
+                alt="Facebook"
+                className="w-5 h-5 mr-2"
+              />
+              Continue with Facebook
+            </button>
+            <button className="bg-gray-100 flex items-center justify-center px-4 py-2 rounded-md w-1/2">
+              <img
+                src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
+                alt="Google"
+                className="w-5 h-5 mr-2"
+              />
+              Continue with Google
+            </button>
+          </div>
+
+          <div className="text-center mb-6">OR</div>
+
+          <form>
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full p-3 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-950"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              className="w-full p-3 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-950"
+            />
+            <div className="flex justify-between items-center mb-4">
+              <a href="#" className="text-blue-500 text-sm">
+                Forgot Password?
+              </a>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-slate-950 text-white p-3 rounded-md hover:bg-slate-700"
+              onClick={() => navigate("/home")}
+            >
+              LOGIN
+            </button>
+          </form>
+
+          <p className="text-sm text-center mt-4">
+            If you are a new user,{' '}
+            <a href="/register" className="text-blue-500 font-semibold">
+              Signup here
+            </a>
+          </p>
         </div>
       </div>
     </div>
