@@ -4,19 +4,19 @@ import Pic1 from "../assets/landingpage1.png";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
-import { FaInstagram, FaTwitter, FaFacebookF } from 'react-icons/fa';
 import Logo from "../assets/logo.png"
+import Footer from "../customcomponents/Footer"
 const LandingPage = () => {
   const navigate = useNavigate();
   const categories = [
-    { title: 'UPSC CSE - GS', icon: '🏛️' },
-    { title: 'IIT JEE', icon: '⚗️' },
-    { title: 'NEET UG', icon: '⚕️' },
-    { title: 'Bank exams', icon: '💰' },
-    { title: 'SSC JE & state AE exams', icon: '📋' },
-    { title: 'CAT & other MBA entrance tests', icon: '📝' },
-    { title: 'CBSE class 12', icon: '📖' },
-    { title: 'CA Intermediate', icon: '🧮' },
+    { title: 'HTML', icon: 'https://cdn-icons-png.flaticon.com/512/1051/1051277.png' },
+    { title: 'CSS', icon: 'https://cdn-icons-png.flaticon.com/512/732/732190.png' },
+    { title: 'JavaScript', icon: 'https://cdn-icons-png.flaticon.com/512/5968/5968292.png' },
+    { title: 'FireBase', icon: 'https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-512.png' },
+    { title: 'Flutter', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTimwgIvNnhm9GHeniw4d_nhAkoXPCg4ls0-A&s' },
+    { title: 'C++', icon: 'https://cdn-icons-png.flaticon.com/512/6132/6132222.png' },
+    { title: 'Java', icon: 'https://cdn-icons-png.flaticon.com/512/226/226777.png' },
+    { title: 'Python', icon: 'https://cdn-icons-png.flaticon.com/512/5968/5968350.png' },
   ];
   const testimonials = [
     {
@@ -72,7 +72,7 @@ const LandingPage = () => {
 
       <div className="h-[90vh] w-[100vw] bg-slate-950">
         <div className="w-[100%] p-[20px] flex flex-col items-center justify-center">
-          <h1 className="text-white text-[40px] font-bold">Exam Categories</h1>
+          <h1 className="text-white text-[40px] font-bold">Courses Categories</h1>
           <p className="text-[18px] text-white">ElevateU prepare students for various exams. Scroll down to find one you are preparing for</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 mt-[50px] shadow-white md:grid-cols-4 gap-6 hover:shadow-2xl transition duration-300">
             {categories.map((category, index) => (
@@ -80,7 +80,7 @@ const LandingPage = () => {
                 key={index}
                 className="flex flex-col items-center justify-center p-6 border rounded-lg shadow transform transition-transform hover:scale-105 hover:shadow-lg"
               >
-                <div className="text-5xl mb-4">{category.icon}</div>
+                <div className="text-5xl mb-4 flex justify-center item-center" ><img className="w-[20%]" src={category.icon}></img></div>
                 <h3 className="text-lg text-white font-semibold">{category.title}</h3>
               </div>
             ))}
@@ -117,76 +117,9 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <footer className="bg-gray-900 text-gray-300 py-12">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div>
-          <img className="w-[30%] " src={Logo} alt="" />
-          <h2 className="text-white text-2xl mb-4">ElevateU</h2>
-          <p className="mb-4">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos repudiandae accusamus assumenda iusto libero vel quas excepturi dolor dicta dolorum.
-          </p>
-          <div className="flex space-x-4">
-            <a href="#" className="hover:text-white">
-              <FaInstagram size={24} />
-            </a>
-            <a href="#" className="hover:text-white">
-              <FaTwitter size={24} />
-            </a>
-            <a href="#" className="hover:text-white">
-              <FaFacebookF size={24} />
-            </a>
-          </div>
-        </div>
-        <div>
-          <h2 className="text-white text-2xl mb-4">Opening Hours</h2>
-          <ul>
-            {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((day) => (
-              <li key={day} className="mb-2">
-                {day}: <span className="font-bold text-white">08:00 AM – 23:00 PM</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-white text-2xl mb-4">Contact Information</h2>
-          <p className="mb-2">Lorem ipsum dolor sit amet.</p>
-          <p className="mb-2">+91 XXXXXXXXXX</p>
-          <p className="mb-2">
-            <a href="#" className="hover:text-white">
-              example@gmail.com
-            </a>
-          </p>
-          <p>
-            <a href="#" className="hover:text-white">
-              abcd.com
-            </a>
-          </p>
-        </div>
-        <div>
-          <h2 className="text-white text-2xl mb-4">Newsletter</h2>
-          <p className="mb-4">Beyond the distant hills, where the winds whisper in sorrow, lies a forgotten land</p>
-          <form className="flex">
-            <input
-              type="email"
-              placeholder="Subscribe"
-              className="flex-1 p-2 rounded-l-lg focus:outline-none text-gray-900"
-            />
-            <button
-              type="submit"
-              className="bg-gray-700 hover:bg-gray-600 p-2 rounded-r-lg text-white flex items-center"
-            >
-              <span className="sr-only">Subscribe</span>✈️
-            </button>
-          </form>
-        </div>
+      <div>
+        <Footer/>
       </div>
-      <div className="mt-12 text-center text-gray-400 text-sm">
-        <p>
-          Copyright ©2024 All rights reserved | made with ❤️ by{' '}
-          <span className="text-white font-semibold"> Team WebWeavers</span>
-        </p>
-      </div>
-    </footer>
     </>
   );
 };

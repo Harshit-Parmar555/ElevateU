@@ -1,21 +1,11 @@
 import React from "react";
 import Logo from "../assets/logo.png"
-import Navbar from "@/customcomponents/Navbar";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import Footer from "../customcomponents/Footer";
 const RegisterPage = () => {
   const navigate = useNavigate();
   return (
+    <>
     <div className="flex h-screen items-center justify-center bg-gradient-to-r from-c1 to-c2">
           <div className="h-[100vh] bg-white shadow-md rounded-lg flex max-w-4xl w-full overflow-hidden">
             <div className="bg-slate-950 text-white p-12 w-1/2 flex flex-col items-center justify-center">
@@ -92,6 +82,8 @@ const RegisterPage = () => {
             </div>
           </div>
         </div>
+          <Footer/>
+          </>
   );
 };
 
