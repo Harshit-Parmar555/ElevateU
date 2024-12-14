@@ -70,7 +70,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="h-[85vh] w-[100vw] bg-slate-950">
+      <div className="h-[90vh] w-[100vw] bg-slate-950">
         <div className="w-[100%] p-[20px] flex flex-col items-center justify-center">
           <h1 className="text-white text-[40px] font-bold">Exam Categories</h1>
           <p className="text-[18px] text-white">ElevateU prepare students for various exams. Scroll down to find one you are preparing for</p>
